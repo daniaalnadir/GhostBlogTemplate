@@ -1,0 +1,50 @@
+{
+  "url": "http://localhost:2368",
+  "server": {
+    "port": 2368,
+    "host": "::"
+  },
+  "database": {
+    "client": "mysql",
+    "connection": {
+      "host": "",
+      "port": 3306,
+      "user": "",
+      "password": "",
+      "database": "",
+      "ssl": {
+        "rejectUnauthorized": true
+      }
+    }
+  },
+  "storage": {
+    "active": "ghost-storage-azure",
+    "ghost-storage-azure": {
+      "connectionString": "",
+      "container": "",
+      "cacheControl": "2592000",
+      "useDatedFolder": true,
+      "cdnUrl": "",
+      "useHttps": "true"
+    }
+  },
+  "logging": {
+    "transports": ["file", "stdout"]
+  },
+  "paths": {
+    "contentPath": "/var/lib/ghost/content"
+  },
+  "mail": {
+    "transport": "SMTP",
+    "options": {
+      "service": "",
+      "host": "",
+      "port": 587,
+      "secure": true,
+      "auth": {
+        "user": "",
+        "pass": ""
+      }
+    }
+  }
+}
