@@ -1,4 +1,4 @@
-FROM ghost:4-alpine
+FROM ghost:5-alpine
 
 # set url-hostname for Ghost with build arg
 ENV url ""
