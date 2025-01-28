@@ -5,9 +5,9 @@ Please give my post a read which instructs you on how to deploy Ghost to Azure o
 
 ## Useful Commands
 
-- **Build Docker File** - `docker build -t myname/ghost-blog .`
-- **Push docker image to repository such as Docker hub** - `docker push myname/ghost-blog`
-- **To run and test your docker image locally** - `docker run -d --name ghost-blog-test -e url=http://localhost:3001 -p 3001:2368 myname/ghost-blog`
+- **Build Docker File** - `docker build --platform linux/amd64 -t name/ghost-blog:{version} .`
+- **Push docker image to repository such as Docker hub** - `docker push name/ghost-blog:{version}`
+- **To run and test your docker image locally** - `docker run -d --name ghost-blog -e NODE_ENV=production -e url=http://localhost:3001 -p 3001:2368 name/ghost-blog:{version}
 
 Note: Before you push you will have to login with docker so use `docker login` to authenticate.
 <br><br>
@@ -58,12 +58,14 @@ To view the contents of a file, use `cat config.production.json` and this will b
     "contentPath": "/var/lib/ghost/content"
   },
   "mail": {
+    "from" : "",
     "transport": "SMTP",
     "options": {
-      "service": "",
+      "service": "Mailgun",
       "host": "",
       "port": 587,
-      "secure": true,
+      "secure": false,
+      "requireTLS": true,
       "auth": {
         "user": "",
         "pass": ""
